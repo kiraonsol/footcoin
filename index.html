@@ -9,6 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -20,10 +22,15 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    #tsparticles {
+      position: fixed;
+      inset: 0;
+      z-index: 1; /* Ensure sparkles are above sections */
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <div id="tsparticles" class="fixed inset-0 z-[-1]"></div>
+  <div id="tsparticles"></div>
   <div id="root">
     <!-- Fallback content if React fails to render -->
     <div class="text-center p-8">
@@ -42,17 +49,17 @@
           React.createElement('a', { href: '#about', className: 'hover:text-pink-400 transition' }, 'About'),
           React.createElement('a', { href: '#tokenomics', className: 'hover:text-pink-400 transition' }, 'Tokenomics'),
           React.createElement('a', { href: '#how-to-buy', className: 'hover:text-pink-400 transition' }, 'How to Buy'),
-          React.createElement('a', { href: '#roadmap', className: 'hover:text-pink-400 transition' }, 'Roadmap'),
-          React.createElement('a', { href: '#team', className: 'hover:text-pink-400 transition' }, 'Team'),
+          React.createElement('a', { href: '#contract', className: 'hover:text-pink-400 transition' }, 'Contract Address'),
+          React.createElement('a', { href: '#exchanges', className: 'hover:text-pink-400 transition' }, 'Exchanges'),
           React.createElement('a', { href: '#community', className: 'hover:text-pink-400 transition' }, 'Community')
         )
       )
     );
 
-    const Hero = () => React.createElement('section', { id: 'home', className: 'min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative' },
+    const Hero = () => React.createElement('section', { id: 'home', className: 'min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative', 'data-aos': 'fade-up' },
       React.createElement('div', { className: 'container mx-auto text-center px-4' },
         React.createElement('a', { href: '#home', className: 'cursor-pointer' },
-          React.createElement('img', { src: 'https://footcoin.me/wp-content/uploads/2025/05/1746852152907-2048x681.png', alt: 'Footcoin Logo', className: 'mx-auto mb-6 w-64 md:w-96 h-auto float max-w-full' })
+          React.createElement('img', { src: 'https://footcoin.me/wp-content/uploads/2025/05/1746852152907-2048x681.png', alt: 'Footcoin Logo', className: 'mx-auto mb-6 w-64 md:w-96 h-auto float' })
         ),
         React.createElement('p', { className: 'text-xl md:text-2xl mb-8 max-w-2xl mx-auto' }, 'The kinkiest meme token on Solana. Join the foot fetish revolution and vibe with our community!'),
         React.createElement('div', { className: 'space-x-4' },
@@ -65,14 +72,14 @@
       )
     );
 
-    const About = () => React.createElement('section', { id: 'about', className: 'py-20 bg-gray-800' },
+    const About = () => React.createElement('section', { id: 'about', className: 'py-24 bg-gray-800', 'data-aos': 'fade-up' },
       React.createElement('div', { className: 'container mx-auto px-4' },
         React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'About $FOOTCOIN'),
         React.createElement('p', { className: 'text-xl max-w-3xl mx-auto text-center' }, '$FOOTCOIN is a meme token built on the Solana blockchain, inspired by the foot fetish community. It aims to bring together enthusiasts and crypto degens in a fun, engaging way while providing real utility through community-driven initiatives.')
       )
     );
 
-    const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'py-20 bg-gray-900' },
+    const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'py-24 bg-gray-900', 'data-aos': 'fade-up' },
       React.createElement('div', { className: 'container mx-auto px-4' },
         React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Tokenomics'),
         React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-8' },
@@ -92,7 +99,7 @@
       )
     );
 
-    const HowToBuy = () => React.createElement('section', { id: 'how-to-buy', className: 'py-20 bg-gray-800' },
+    const HowToBuy = () => React.createElement('section', { id: 'how-to-buy', className: 'py-24 bg-gray-800', 'data-aos': 'fade-up' },
       React.createElement('div', { className: 'container mx-auto px-4' },
         React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'How to Buy $FOOTCOIN'),
         React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
@@ -108,26 +115,35 @@
       )
     );
 
-    const Roadmap = () => React.createElement('section', { id: 'roadmap', className: 'py-20 bg-gray-900' },
+    const ContractAddress = () => React.createElement('section', { id: 'contract', className: 'py-24 bg-gray-900', 'data-aos': 'fade-up' },
       React.createElement('div', { className: 'container mx-auto px-4' },
-        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Roadmap'),
-        React.createElement('ul', { className: 'list-disc list-inside text-xl max-w-3xl mx-auto' },
-          React.createElement('li', null, 'Q1 2025: Token Launch and Airdrop'),
-          React.createElement('li', null, 'Q2 2025: Community Building and Partnerships'),
-          React.createElement('li', null, 'Q3 2025: NFT Collection Release'),
-          React.createElement('li', null, 'Q4 2025: Staking and Governance Features')
+        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Contract Address'),
+        React.createElement('div', { className: 'flex justify-center items-center' },
+          React.createElement('input', { type: 'text', value: '0x1234567890abcdef', readOnly: true, className: 'bg-gray-700 p-2 rounded-l-lg text-white' }),
+          React.createElement('button', { onClick: () => { navigator.clipboard.writeText('0x1234567890abcdef'); alert('Copied!'); }, className: 'bg-pink-500 p-2 rounded-r-lg text-white' }, 'Copy')
         )
       )
     );
 
-    const Team = () => React.createElement('section', { id: 'team', className: 'py-20 bg-gray-800' },
+    const Exchanges = () => React.createElement('section', { id: 'exchanges', className: 'py-24 bg-gray-800', 'data-aos': 'fade-up' },
       React.createElement('div', { className: 'container mx-auto px-4' },
-        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Team'),
-        React.createElement('p', { className: 'text-xl max-w-3xl mx-auto text-center' }, 'The Footcoin team consists of experienced developers, marketers, and community managers passionate about creating a unique and engaging crypto experience.')
+        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Exchange Listings'),
+        React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
+          React.createElement('div', { className: 'text-center' },
+            React.createElement('img', { src: 'https://via.placeholder.com/150', alt: 'Exchange 1', className: 'mx-auto mb-4' }),
+            React.createElement('p', null, 'Exchange 1'),
+            React.createElement('a', { href: '#', className: 'text-pink-400' }, 'Trade Now')
+          ),
+          React.createElement('div', { className: 'text-center' },
+            React.createElement('img', { src: 'https://via.placeholder.com/150', alt: 'Exchange 2', className: 'mx-auto mb-4' }),
+            React.createElement('p', null, 'Exchange 2'),
+            React.createElement('a', { href: '#', className: 'text-pink-400' }, 'Trade Now')
+          )
+        )
       )
     );
 
-    const Community = () => React.createElement('section', { id: 'community', className: 'py-20 bg-gray-900' },
+    const Community = () => React.createElement('section', { id: 'community', className: 'py-24 bg-gray-900', 'data-aos': 'fade-up' },
       React.createElement('div', { className: 'container mx-auto px-4 text-center' },
         React.createElement('h2', { className: 'text-4xl font-bold mb-12 gradient-text' }, 'Join the Footcoin Community'),
         React.createElement('p', { className: 'text-xl mb-8 max-w-2xl mx-auto' }, 'Connect with fellow foot enthusiasts and crypto degens. Share memes, get updates, and join the revolution!'),
@@ -152,8 +168,8 @@
       React.createElement(About),
       React.createElement(Tokenomics),
       React.createElement(HowToBuy),
-      React.createElement(Roadmap),
-      React.createElement(Team),
+      React.createElement(ContractAddress),
+      React.createElement(Exchanges),
       React.createElement(Community),
       React.createElement(Footer)
     );
@@ -166,64 +182,19 @@
       // Initialize tsparticles for sparkles
       const particlesConfig = {
         particles: {
-          number: {
-            value: 200,
-            density: {
-              enable: true,
-              value_area: 800
-            }
-          },
-          color: {
-            value: "#ff69b4" // Light pink to match the theme
-          },
-          shape: {
-            type: "circle"
-          },
-          opacity: {
-            value: 0.7,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false
-            }
-          },
-          size: {
-            value: 5,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 2,
-              size_min: 0.1,
-              sync: false
-            }
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            direction: "bottom",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            attract: {
-              enable: false
-            }
-          }
+          number: { value: 100 },
+          color: { value: "#ffffff" },
+          opacity: { value: 0.3, random: true },
+          size: { value: 3, random: true },
+          move: { enable: true, speed: 0.5, direction: "bottom" }
         },
-        interactivity: {
-          events: {
-            onhover: {
-              enable: false
-            },
-            onclick: {
-              enable: false
-            }
-          }
-        },
+        interactivity: { events: { onhover: { enable: false }, onclick: { enable: false } } },
         retina_detect: true
       };
       tsParticles.load("tsparticles", particlesConfig);
+
+      // Initialize AOS for animations
+      AOS.init({ duration: 1000, offset: 100 });
     } catch (error) {
       console.error("Failed to render React app or initialize particles:", error);
     }
