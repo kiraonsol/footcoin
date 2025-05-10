@@ -25,23 +25,22 @@
     #tsparticles {
       position: fixed;
       inset: 0;
-      z-index: 1; /* Ensure sparkles are above sections */
+      z-index: 1; /* Above sections, below navbar */
+    }
+    section {
+      position: relative; /* Ensure sections are above particles */
+      z-index: 2;
     }
   </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
   <div id="tsparticles"></div>
-  <div id="root">
-    <!-- Fallback content if React fails to render -->
-    <div class="text-center p-8">
-      <h1 class="text-4xl font-bold">Footcoin ($FOOTCOIN)</h1>
-      <p class="text-xl mt-4">Loading... If this persists, please check your browser console for errors.</p>
-    </div>
-  </div>
+  <div id="root"></div> <!-- Removed fallback content to let React fully control -->
   <script type="text/javascript">
     console.log("React app is initializing...");
 
-    const NavBar = () => React.createElement('nav', { className: 'bg-gray-800 p-4 fixed w-full top-0 z-10 shadow-lg' },
+    // Define components using createElement
+    const NavBar = () => React.createElement('nav', { className: 'bg-gray-800 p-4 fixed w-full top-0 z-20 shadow-lg' },
       React.createElement('div', { className: 'container mx-auto flex justify-between items-center' },
         React.createElement('div', { className: 'text-2xl font-bold gradient-text' }, 'Footcoin'),
         React.createElement('div', { className: 'space-x-4' },
@@ -196,7 +195,7 @@
       // Initialize AOS for animations
       AOS.init({ duration: 1000, offset: 100 });
     } catch (error) {
-      console.error("Failed to render React app or initialize particles:", error);
+      console.error("Failed to render React app or initialize particles/AOS:", error);
     }
   </script>
 </body>
