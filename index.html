@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Footcoin ($FOOT) - The ultimate foot fetish meme token on Solana. Join the community, trade, and vibe with the kinkiest crypto around!">
-  <title>Footcoin - $FOOT Meme Token</title>
+  <meta name="description" content="Footcoin ($FOOTCOIN) - The ultimate foot fetish meme token on Solana. Join the community, trade, and vibe with the kinkiest crypto around!">
+  <title>Footcoin - $FOOTCOIN Meme Token</title>
   <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
@@ -27,7 +27,7 @@
   <div id="root">
     <!-- Fallback content if React fails to render -->
     <div class="text-center p-8">
-      <h1 class="text-4xl font-bold">Footcoin ($FOOT)</h1>
+      <h1 class="text-4xl font-bold">Footcoin ($FOOTCOIN)</h1>
       <p class="text-xl mt-4">Loading... If this persists, please check your browser console for errors.</p>
     </div>
   </div>
@@ -39,8 +39,11 @@
         React.createElement('div', { className: 'text-2xl font-bold gradient-text' }, 'Footcoin'),
         React.createElement('div', { className: 'space-x-4' },
           React.createElement('a', { href: '#home', className: 'hover:text-pink-400 transition' }, 'Home'),
+          React.createElement('a', { href: '#about', className: 'hover:text-pink-400 transition' }, 'About'),
           React.createElement('a', { href: '#tokenomics', className: 'hover:text-pink-400 transition' }, 'Tokenomics'),
           React.createElement('a', { href: '#how-to-buy', className: 'hover:text-pink-400 transition' }, 'How to Buy'),
+          React.createElement('a', { href: '#roadmap', className: 'hover:text-pink-400 transition' }, 'Roadmap'),
+          React.createElement('a', { href: '#team', className: 'hover:text-pink-400 transition' }, 'Team'),
           React.createElement('a', { href: '#community', className: 'hover:text-pink-400 transition' }, 'Community')
         )
       )
@@ -49,12 +52,11 @@
     const Hero = () => React.createElement('section', { id: 'home', className: 'min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative' },
       React.createElement('div', { className: 'container mx-auto text-center px-4' },
         React.createElement('a', { href: '#home', className: 'cursor-pointer' },
-          React.createElement('img', { src: 'https://footcoin.me/wp-content/uploads/2025/05/1746852152907-2048x681.png', alt: 'Footcoin Logo', className: 'mx-auto mb-6 w-64 md:w-96 h-auto float' })
+          React.createElement('img', { src: 'https://footcoin.me/wp-content/uploads/2025/05/1746852152907-2048x681.png', alt: 'Footcoin Logo', className: 'mx-auto mb-6 w-64 md:w-96 h-auto float max-w-full' })
         ),
-        React.createElement('h1', { className: 'text-5xl md:text-7xl font-extrabold mb-4 gradient-text' }, '$FOOT'),
         React.createElement('p', { className: 'text-xl md:text-2xl mb-8 max-w-2xl mx-auto' }, 'The kinkiest meme token on Solana. Join the foot fetish revolution and vibe with our community!'),
         React.createElement('div', { className: 'space-x-4' },
-          React.createElement('a', { href: '#how-to-buy', className: 'bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Get $FOOT'),
+          React.createElement('a', { href: '#how-to-buy', className: 'bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Get $FOOTCOIN'),
           React.createElement('a', { href: 'https://t.me/footcoin', target: '_blank', className: 'border border-pink-500 hover:bg-pink-500 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Join Telegram')
         )
       ),
@@ -63,13 +65,20 @@
       )
     );
 
-    const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'py-20 bg-gray-800' },
+    const About = () => React.createElement('section', { id: 'about', className: 'py-20 bg-gray-800' },
+      React.createElement('div', { className: 'container mx-auto px-4' },
+        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'About $FOOTCOIN'),
+        React.createElement('p', { className: 'text-xl max-w-3xl mx-auto text-center' }, '$FOOTCOIN is a meme token built on the Solana blockchain, inspired by the foot fetish community. It aims to bring together enthusiasts and crypto degens in a fun, engaging way while providing real utility through community-driven initiatives.')
+      )
+    );
+
+    const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'py-20 bg-gray-900' },
       React.createElement('div', { className: 'container mx-auto px-4' },
         React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Tokenomics'),
         React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-8' },
           React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg text-center' },
             React.createElement('h3', { className: 'text-xl font-semibold mb-2' }, 'Total Supply'),
-            React.createElement('p', { className: 'text-2xl' }, '1,000,000,000 $FOOT')
+            React.createElement('p', { className: 'text-2xl' }, '1,000,000,000 $FOOTCOIN')
           ),
           React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg text-center' },
             React.createElement('h3', { className: 'text-xl font-semibold mb-2' }, 'Liquidity'),
@@ -83,23 +92,42 @@
       )
     );
 
-    const HowToBuy = () => React.createElement('section', { id: 'how-to-buy', className: 'py-20 bg-gray-900' },
+    const HowToBuy = () => React.createElement('section', { id: 'how-to-buy', className: 'py-20 bg-gray-800' },
       React.createElement('div', { className: 'container mx-auto px-4' },
-        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'How to Buy $FOOT'),
+        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'How to Buy $FOOTCOIN'),
         React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
           React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg' },
             React.createElement('h3', { className: 'text-xl font-semibold mb-4' }, 'Step 1: Set Up a Wallet'),
             React.createElement('p', null, 'Download Phantom or Solflare wallet. Secure your seed phrase and add SOL to your wallet from an exchange like Binance or Coinbase.')
           ),
           React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg' },
-            React.createElement('h3', { className: 'text-xl font-semibold mb-4' }, 'Step 2: Buy $FOOT'),
-            React.createElement('p', null, 'Visit Raydium or Meteora, connect your wallet, and swap SOL for $FOOT. Check the contract address: ', React.createElement('span', { className: 'text-pink-400' }, 'TBD'), '.')
+            React.createElement('h3', { className: 'text-xl font-semibold mb-4' }, 'Step 2: Buy $FOOTCOIN'),
+            React.createElement('p', null, 'Visit Raydium or Meteora, connect your wallet, and swap SOL for $FOOTCOIN. Check the contract address: ', React.createElement('span', { className: 'text-pink-400' }, 'TBD'), '.')
           )
         )
       )
     );
 
-    const Community = () => React.createElement('section', { id: 'community', className: 'py-20 bg-gray-800' },
+    const Roadmap = () => React.createElement('section', { id: 'roadmap', className: 'py-20 bg-gray-900' },
+      React.createElement('div', { className: 'container mx-auto px-4' },
+        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Roadmap'),
+        React.createElement('ul', { className: 'list-disc list-inside text-xl max-w-3xl mx-auto' },
+          React.createElement('li', null, 'Q1 2025: Token Launch and Airdrop'),
+          React.createElement('li', null, 'Q2 2025: Community Building and Partnerships'),
+          React.createElement('li', null, 'Q3 2025: NFT Collection Release'),
+          React.createElement('li', null, 'Q4 2025: Staking and Governance Features')
+        )
+      )
+    );
+
+    const Team = () => React.createElement('section', { id: 'team', className: 'py-20 bg-gray-800' },
+      React.createElement('div', { className: 'container mx-auto px-4' },
+        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Team'),
+        React.createElement('p', { className: 'text-xl max-w-3xl mx-auto text-center' }, 'The Footcoin team consists of experienced developers, marketers, and community managers passionate about creating a unique and engaging crypto experience.')
+      )
+    );
+
+    const Community = () => React.createElement('section', { id: 'community', className: 'py-20 bg-gray-900' },
       React.createElement('div', { className: 'container mx-auto px-4 text-center' },
         React.createElement('h2', { className: 'text-4xl font-bold mb-12 gradient-text' }, 'Join the Footcoin Community'),
         React.createElement('p', { className: 'text-xl mb-8 max-w-2xl mx-auto' }, 'Connect with fellow foot enthusiasts and crypto degens. Share memes, get updates, and join the revolution!'),
@@ -121,8 +149,11 @@
     const App = () => React.createElement('div', null,
       React.createElement(NavBar),
       React.createElement(Hero),
+      React.createElement(About),
       React.createElement(Tokenomics),
       React.createElement(HowToBuy),
+      React.createElement(Roadmap),
+      React.createElement(Team),
       React.createElement(Community),
       React.createElement(Footer)
     );
@@ -136,20 +167,20 @@
       const particlesConfig = {
         particles: {
           number: {
-            value: 100,
+            value: 200,
             density: {
               enable: true,
               value_area: 800
             }
           },
           color: {
-            value: "#ffffff"
+            value: "#ff69b4" // Light pink to match the theme
           },
           shape: {
             type: "circle"
           },
           opacity: {
-            value: 0.5,
+            value: 0.7,
             random: true,
             anim: {
               enable: true,
@@ -159,7 +190,7 @@
             }
           },
           size: {
-            value: 3,
+            value: 5,
             random: true,
             anim: {
               enable: true,
@@ -170,7 +201,7 @@
           },
           move: {
             enable: true,
-            speed: 0.5,
+            speed: 1,
             direction: "bottom",
             random: false,
             straight: false,
