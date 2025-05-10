@@ -8,6 +8,8 @@
   <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -44,19 +46,22 @@
             React.createElement('a', { href: '#about', className: 'hover:text-pink-400 transition' }, 'About'),
             React.createElement('a', { href: '#tokenomics', className: 'hover:text-pink-400 transition' }, 'Tokenomics'),
             React.createElement('a', { href: '#how-to-buy', className: 'hover:text-pink-400 transition' }, 'How to Buy'),
-            React.createElement('a', { href: '#contract', className: 'hover:text-pink-400 transition' }, 'Contract Address'),
             React.createElement('a', { href: '#exchanges', className: 'hover:text-pink-400 transition' }, 'Exchanges'),
             React.createElement('a', { href: '#community', className: 'hover:text-pink-400 transition' }, 'Community')
           )
         )
       );
 
-      const Hero = () => React.createElement('section', { id: 'home', className: 'min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative' },
+      const Hero = () => React.createElement('section', { id: 'home', className: 'min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto text-center px-4' },
           React.createElement('a', { href: '#home', className: 'cursor-pointer' },
             React.createElement('img', { src: 'https://footcoin.me/wp-content/uploads/2025/05/1746852152907-2048x681.png', alt: 'Footcoin Logo', className: 'mx-auto mb-6 w-64 md:w-96 h-auto float', onError: () => console.error("Failed to load logo image") })
           ),
-          React.createElement('p', { className: 'text-xl md:text-2xl mb-8 max-w-2xl mx-auto' }, 'The kinkiest meme token on Solana. Join the foot fetish revolution and vibe with our community!'),
+          React.createElement('p', { className: 'text-xl md:text-2xl mb-4 max-w-2xl mx-auto' }, 'The kinkiest meme token on Solana. Join the foot fetish revolution and vibe with our community!'),
+          React.createElement('div', { className: 'flex justify-center items-center mb-8' },
+            React.createElement('input', { type: 'text', value: '0x1234567890abcdef', readOnly: true, className: 'bg-gray-700 p-2 rounded-l-lg text-white' }),
+            React.createElement('button', { onClick: () => { navigator.clipboard.writeText('0x1234567890abcdef'); alert('Copied!'); }, className: 'bg-pink-500 p-2 rounded-r-lg text-white' }, 'Copy')
+          ),
           React.createElement('div', { className: 'space-x-4' },
             React.createElement('a', { href: '#how-to-buy', className: 'bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Get $FOOTCOIN'),
             React.createElement('a', { href: 'https://t.me/footcoin', target: '_blank', className: 'border border-pink-500 hover:bg-pink-500 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Join Telegram')
@@ -67,14 +72,14 @@
         )
       );
 
-      const About = () => React.createElement('section', { id: 'about', className: 'py-24 bg-gray-800' },
+      const About = () => React.createElement('section', { id: 'about', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto px-4' },
           React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'About $FOOTCOIN'),
           React.createElement('p', { className: 'text-xl max-w-3xl mx-auto text-center' }, '$FOOTCOIN is a meme token built on the Solana blockchain, inspired by the foot fetish community. It aims to bring together enthusiasts and crypto degens in a fun, engaging way while providing real utility through community-driven initiatives.')
         )
       );
 
-      const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'py-24 bg-gray-900' },
+      const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'min-h-screen flex items-center justify-center bg-gray-900 py-24', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto px-4' },
           React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Tokenomics'),
           React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-8' },
@@ -94,7 +99,7 @@
         )
       );
 
-      const HowToBuy = () => React.createElement('section', { id: 'how-to-buy', className: 'py-24 bg-gray-800' },
+      const HowToBuy = () => React.createElement('section', { id: 'how-to-buy', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto px-4' },
           React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'How to Buy $FOOTCOIN'),
           React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
@@ -104,23 +109,13 @@
             ),
             React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg' },
               React.createElement('h3', { className: 'text-xl font-semibold mb-4' }, 'Step 2: Buy $FOOTCOIN'),
-              React.createElement('p', null, 'Visit Raydium or Meteora, connect your wallet, and swap SOL for $FOOTCOIN. Check the contract address: ', React.createElement('span', { className: 'text-pink-400' }, 'TBD'), '.')
+              React.createElement('p', null, 'Visit Raydium or Meteora, connect your wallet, and swap SOL for $FOOTCOIN. Check the contract address above.')
             )
           )
         )
       );
 
-      const ContractAddress = () => React.createElement('section', { id: 'contract', className: 'py-24 bg-gray-900' },
-        React.createElement('div', { className: 'container mx-auto px-4' },
-          React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Contract Address'),
-          React.createElement('div', { className: 'flex justify-center items-center' },
-            React.createElement('input', { type: 'text', value: '0x1234567890abcdef', readOnly: true, className: 'bg-gray-700 p-2 rounded-l-lg text-white' }),
-            React.createElement('button', { onClick: () => { navigator.clipboard.writeText('0x1234567890abcdef'); alert('Copied!'); }, className: 'bg-pink-500 p-2 rounded-r-lg text-white' }, 'Copy')
-          )
-        )
-      );
-
-      const Exchanges = () => React.createElement('section', { id: 'exchanges', className: 'py-24 bg-gray-800' },
+      const Exchanges = () => React.createElement('section', { id: 'exchanges', className: 'min-h-screen flex items-center justify-center bg-gray-900 py-24', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto px-4' },
           React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Exchange Listings'),
           React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
@@ -138,7 +133,7 @@
         )
       );
 
-      const Community = () => React.createElement('section', { id: 'community', className: 'py-24 bg-gray-900' },
+      const Community = () => React.createElement('section', { id: 'community', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto px-4 text-center' },
           React.createElement('h2', { className: 'text-4xl font-bold mb-12 gradient-text' }, 'Join the Footcoin Community'),
           React.createElement('p', { className: 'text-xl mb-8 max-w-2xl mx-auto' }, 'Connect with fellow foot enthusiasts and crypto degens. Share memes, get updates, and join the revolution!'),
@@ -163,7 +158,6 @@
         React.createElement(About),
         React.createElement(Tokenomics),
         React.createElement(HowToBuy),
-        React.createElement(ContractAddress),
         React.createElement(Exchanges),
         React.createElement(Community),
         React.createElement(Footer)
@@ -172,8 +166,11 @@
       const root = ReactDOM.createRoot(document.getElementById('root'));
       root.render(React.createElement(App));
       console.log("React app rendered successfully");
+
+      // Initialize AOS for animations
+      AOS.init({ duration: 1000, offset: 100 });
     } catch (error) {
-      console.error("Failed to render React app:", error);
+      console.error("Failed to render React app or initialize AOS:", error);
     }
   </script>
 </body>
