@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,6 @@
   <title>Footcoin - $FOOT Meme Token</title>
   <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@7.22.9/babel.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes float {
@@ -24,125 +22,112 @@
   </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <div id="root"></div>
-  <script type="text/babel">
-    const NavBar = () => (
-      <nav class="bg-gray-800 p-4 fixed w-full top-0 z-10 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-          <div class="text-2xl font-bold gradient-text">Footcoin</div>
-          <div class="space-x-4">
-            <a href="#home" class="hover:text-pink-400 transition">Home</a>
-            <a href="#tokenomics" class="hover:text-pink-400 transition">Tokenomics</a>
-            <a href="#how-to-buy" class="hover:text-pink-400 transition">How to Buy</a>
-            <a href="#community" class="hover:text-pink-400 transition">Community</a>
-          </div>
-        </div>
-      </nav>
+  <div id="root">
+    <!-- Fallback content if React fails to render -->
+    <div class="text-center p-8">
+      <h1 class="text-4xl font-bold">Footcoin ($FOOT)</h1>
+      <p class="text-xl mt-4">Loading... If this persists, please check your browser console for errors.</p>
+    </div>
+  </div>
+  <script type="text/javascript">
+    console.log("React app is initializing...");
+
+    const NavBar = () => React.createElement('nav', { className: 'bg-gray-800 p-4 fixed w-full top-0 z-10 shadow-lg' },
+      React.createElement('div', { className: 'container mx-auto flex justify-between items-center' },
+        React.createElement('div', { className: 'text-2xl font-bold gradient-text' }, 'Footcoin'),
+        React.createElement('div', { className: 'space-x-4' },
+          React.createElement('a', { href: '#home', className: 'hover:text-pink-400 transition' }, 'Home'),
+          React.createElement('a', { href: '#tokenomics', className: 'hover:text-pink-400 transition' }, 'Tokenomics'),
+          React.createElement('a', { href: '#how-to-buy', className: 'hover:text-pink-400 transition' }, 'How to Buy'),
+          React.createElement('a', { href: '#community', className: 'hover:text-pink-400 transition' }, 'Community')
+        )
+      )
     );
 
-    const Hero = () => (
-      <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative">
-        <div class="container mx-auto text-center px-4">
-          <img 
-            src="https://footcoin.me/wp-content/uploads/2025/05/1746852152907-2048x681.png" 
-            alt="Footcoin Logo" 
-            class="mx-auto mb-6 w-64 md:w-96 h-auto float" 
-          />
-          <h1 class="text-5xl md:text-7xl font-extrabold mb-4 gradient-text">$FOOT</h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-            The kinkiest meme token on Solana. Join the foot fetish revolution and vibe with our community!
-          </p>
-          <div class="space-x-4">
-            <a href="#how-to-buy" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition">Get $FOOT</a>
-            <a href="https://t.me/footcoin" target="_blank" class="border border-pink-500 hover:bg-pink-500 text-white px-6 py-3 rounded-full font-semibold transition">Join Telegram</a>
-          </div>
-        </div>
-        <img 
-          src="https://footcoin.me/wp-content/uploads/2025/05/giphy.gif" 
-          alt="Dancing Girl Animation" 
-          class="absolute top-16 right-4 md:right-8 w-32 md:w-48 h-auto opacity-90" 
-        />
-      </section>
+    const Hero = () => React.createElement('section', { id: 'home', className: 'min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative' },
+      React.createElement('div', { className: 'container mx-auto text-center px-4' },
+        React.createElement('img', { src: 'https://via.placeholder.com/300x100?text=FOOTCOIN+LOGO', alt: 'Footcoin Logo', className: 'mx-auto mb-6 w-64 md:w-96 h-auto float' }),
+        React.createElement('h1', { className: 'text-5xl md:text-7xl font-extrabold mb-4 gradient-text' }, '$FOOT'),
+        React.createElement('p', { className: 'text-xl md:text-2xl mb-8 max-w-2xl mx-auto' }, 'The kinkiest meme token on Solana. Join the foot fetish revolution and vibe with our community!'),
+        React.createElement('div', { className: 'space-x-4' },
+          React.createElement('a', { href: '#how-to-buy', className: 'bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Get $FOOT'),
+          React.createElement('a', { href: 'https://t.me/footcoin', target: '_blank', className: 'border border-pink-500 hover:bg-pink-500 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Join Telegram')
+        )
+      ),
+      React.createElement('img', { src: 'https://via.placeholder.com/150x200?text=Dancing+Girl', alt: 'Dancing Girl Animation', className: 'absolute top-16 right-4 md:right-8 w-32 md:w-48 h-auto opacity-90' })
     );
 
-    const Tokenomics = () => (
-      <section id="tokenomics" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4">
-          <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Tokenomics</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-gray-700 p-6 rounded-lg text-center">
-              <h3 class="text-xl font-semibold mb-2">Total Supply</h3>
-              <p class="text-2xl">1,000,000,000 $FOOT</p>
-            </div>
-            <div class="bg-gray-700 p-6 rounded-lg text-center">
-              <h3 class="text-xl font-semibold mb-2">Liquidity</h3>
-              <p class="text-2xl">100% Locked for 1 Year</p>
-            </div>
-            <div class="bg-gray-700 p-6 rounded-lg text-center">
-              <h3 class="text-xl font-semibold mb-2">Distribution</h3>
-              <p class="text-2xl">50% Airdrop, 30% LP, 20% Team</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'py-20 bg-gray-800' },
+      React.createElement('div', { className: 'container mx-auto px-4' },
+        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Tokenomics'),
+        React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-8' },
+          React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg text-center' },
+            React.createElement('h3', { className: 'text-xl font-semibold mb-2' }, 'Total Supply'),
+            React.createElement('p', { className: 'text-2xl' }, '1,000,000,000 $FOOT')
+          ),
+          React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg text-center' },
+            React.createElement('h3', { className: 'text-xl font-semibold mb-2' }, 'Liquidity'),
+            React.createElement('p', { className: 'text-2xl' }, '100% Locked for 1 Year')
+          ),
+          React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg text-center' },
+            React.createElement('h3', { className: 'text-xl font-semibold mb-2' }, 'Distribution'),
+            React.createElement('p', { className: 'text-2xl' }, '50% Airdrop, 30% LP, 20% Team')
+          )
+        )
+      )
     );
 
-    const HowToBuy = () => (
-      <section id="how-to-buy" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4">
-          <h2 class="text-4xl font-bold text-center mb-12 gradient-text">How to Buy $FOOT</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-gray-700 p-6 rounded-lg">
-              <h3 class="text-xl font-semibold mb-4">Step 1: Set Up a Wallet</h3>
-              <p>Download Phantom or Solflare wallet. Secure your seed phrase and add SOL to your wallet from an exchange like Binance or Coinbase.</p>
-            </div>
-            <div class="bg-gray-700 p-6 rounded-lg">
-              <h3 class="text-xl font-semibold mb-4">Step 2: Buy $FOOT</h3>
-              <p>Visit Raydium or Meteora, connect your wallet, and swap SOL for $FOOT. Check the contract address: <span class="text-pink-400">TBD</span>.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    const HowToBuy = () => React.createElement('section', { id: 'how-to-buy', className: 'py-20 bg-gray-900' },
+      React.createElement('div', { className: 'container mx-auto px-4' },
+        React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'How to Buy $FOOT'),
+        React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
+          React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg' },
+            React.createElement('h3', { className: 'text-xl font-semibold mb-4' }, 'Step 1: Set Up a Wallet'),
+            React.createElement('p', null, 'Download Phantom or Solflare wallet. Secure your seed phrase and add SOL to your wallet from an exchange like Binance or Coinbase.')
+          ),
+          React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg' },
+            React.createElement('h3', { className: 'text-xl font-semibold mb-4' }, 'Step 2: Buy $FOOT'),
+            React.createElement('p', null, 'Visit Raydium or Meteora, connect your wallet, and swap SOL for $FOOT. Check the contract address: ', React.createElement('span', { className: 'text-pink-400' }, 'TBD'), '.')
+          )
+        )
+      )
     );
 
-    const Community = () => (
-      <section id="community" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4 text-center">
-          <h2 class="text-4xl font-bold mb-12 gradient-text">Join the Footcoin Community</h2>
-          <p class="text-xl mb-8 max-w-2xl mx-auto">
-            Connect with fellow foot enthusiasts and crypto degens. Share memes, get updates, and join the revolution!
-          </p>
-          <div class="flex justify-center space-x-6">
-            <a href="https://t.me/footcoin" target="_blank" class="text-4xl hover:text-pink-400 transition">📱</a>
-            <a href="https://twitter.com/footcoin" target="_blank" class="text-4xl hover:text-pink-400 transition">🐦</a>
-            <a href="https://discord.gg/footcoin" target="_blank" class="text-4xl hover:text-pink-400 transition">🎮</a>
-          </div>
-        </div>
-      </section>
+    const Community = () => React.createElement('section', { id: 'community', className: 'py-20 bg-gray-800' },
+      React.createElement('div', { className: 'container mx-auto px-4 text-center' },
+        React.createElement('h2', { className: 'text-4xl font-bold mb-12 gradient-text' }, 'Join the Footcoin Community'),
+        React.createElement('p', { className: 'text-xl mb-8 max-w-2xl mx-auto' }, 'Connect with fellow foot enthusiasts and crypto degens. Share memes, get updates, and join the revolution!'),
+        React.createElement('div', { className: 'flex justify-center space-x-6' },
+          React.createElement('a', { href: 'https://t.me/footcoin', target: '_blank', className: 'text-4xl hover:text-pink-400 transition' }, '📱'),
+          React.createElement('a', { href: 'https://twitter.com/footcoin', target: '_blank', className: 'text-4xl hover:text-pink-400 transition' }, '🐦'),
+          React.createElement('a', { href: 'https://discord.gg/footcoin', target: '_blank', className: 'text-4xl hover:text-pink-400 transition' }, '🎮')
+        )
+      )
     );
 
-    const Footer = () => (
-      <footer class="bg-gray-900 py-8 border-t border-gray-700">
-        <div class="container mx-auto px-4 text-center">
-          <p>© 2025 Footcoin. All rights reserved.</p>
-          <p class="mt-2 text-sm">Not financial advice. DYOR before investing.</p>
-        </div>
-      </footer>
+    const Footer = () => React.createElement('footer', { className: 'bg-gray-900 py-8 border-t border-gray-700' },
+      React.createElement('div', { className: 'container mx-auto px-4 text-center' },
+        React.createElement('p', null, '© 2025 Footcoin. All rights reserved.'),
+        React.createElement('p', { className: 'mt-2 text-sm' }, 'Not financial advice. DYOR before investing.')
+      )
     );
 
-    const App = () => (
-      <div>
-        <NavBar />
-        <Hero />
-        <Tokenomics />
-        <HowToBuy />
-        <Community />
-        <Footer />
-      </div>
+    const App = () => React.createElement('div', null,
+      React.createElement(NavBar),
+      React.createElement(Hero),
+      React.createElement(Tokenomics),
+      React.createElement(HowToBuy),
+      React.createElement(Community),
+      React.createElement(Footer)
     );
 
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
+    try {
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(React.createElement(App));
+      console.log("React app rendered successfully");
+    } catch (error) {
+      console.error("Failed to render React app:", error);
+    }
   </script>
 </body>
 </html>
