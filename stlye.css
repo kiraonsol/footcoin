@@ -1,0 +1,5 @@
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  z-index: 1; /* Places it above sections but below navigation */
+}
