@@ -7,6 +7,7 @@
   <title>Footcoin - $FOOT Meme Token</title>
   <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes float {
@@ -22,6 +23,7 @@
   </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
+  <div id="tsparticles" class="fixed inset-0 z-[-1]"></div>
   <div id="root">
     <!-- Fallback content if React fails to render -->
     <div class="text-center p-8">
@@ -46,7 +48,9 @@
 
     const Hero = () => React.createElement('section', { id: 'home', className: 'min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative' },
       React.createElement('div', { className: 'container mx-auto text-center px-4' },
-        React.createElement('img', { src: 'https://via.placeholder.com/300x100?text=FOOTCOIN+LOGO', alt: 'Footcoin Logo', className: 'mx-auto mb-6 w-64 md:w-96 h-auto float' }),
+        React.createElement('a', { href: '#home', className: 'cursor-pointer' },
+          React.createElement('img', { src: 'https://footcoin.me/wp-content/uploads/2025/05/1746852152907-2048x681.png', alt: 'Footcoin Logo', className: 'mx-auto mb-6 w-64 md:w-96 h-auto float' })
+        ),
         React.createElement('h1', { className: 'text-5xl md:text-7xl font-extrabold mb-4 gradient-text' }, '$FOOT'),
         React.createElement('p', { className: 'text-xl md:text-2xl mb-8 max-w-2xl mx-auto' }, 'The kinkiest meme token on Solana. Join the foot fetish revolution and vibe with our community!'),
         React.createElement('div', { className: 'space-x-4' },
@@ -54,7 +58,9 @@
           React.createElement('a', { href: 'https://t.me/footcoin', target: '_blank', className: 'border border-pink-500 hover:bg-pink-500 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Join Telegram')
         )
       ),
-      React.createElement('img', { src: 'https://via.placeholder.com/150x200?text=Dancing+Girl', alt: 'Dancing Girl Animation', className: 'absolute top-16 right-4 md:right-8 w-32 md:w-48 h-auto opacity-90' })
+      React.createElement('a', { href: '#community', className: 'cursor-pointer' },
+        React.createElement('img', { src: 'https://footcoin.me/wp-content/uploads/2025/05/giphy.gif', alt: 'Dancing Girl Animation', className: 'absolute top-16 right-4 md:right-8 w-32 md:w-48 h-auto opacity-90' })
+      )
     );
 
     const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'py-20 bg-gray-800' },
@@ -125,8 +131,70 @@
       const root = ReactDOM.createRoot(document.getElementById('root'));
       root.render(React.createElement(App));
       console.log("React app rendered successfully");
+
+      // Initialize tsparticles for sparkles
+      const particlesConfig = {
+        particles: {
+          number: {
+            value: 100,
+            density: {
+              enable: true,
+              value_area: 800
+            }
+          },
+          color: {
+            value: "#ffffff"
+          },
+          shape: {
+            type: "circle"
+          },
+          opacity: {
+            value: 0.5,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false
+            }
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 2,
+              size_min: 0.1,
+              sync: false
+            }
+          },
+          move: {
+            enable: true,
+            speed: 0.5,
+            direction: "bottom",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            attract: {
+              enable: false
+            }
+          }
+        },
+        interactivity: {
+          events: {
+            onhover: {
+              enable: false
+            },
+            onclick: {
+              enable: false
+            }
+          }
+        },
+        retina_detect: true
+      };
+      tsParticles.load("tsparticles", particlesConfig);
     } catch (error) {
-      console.error("Failed to render React app:", error);
+      console.error("Failed to render React app or initialize particles:", error);
     }
   </script>
 </body>
