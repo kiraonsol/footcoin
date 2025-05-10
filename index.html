@@ -8,6 +8,8 @@
   <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -35,9 +37,6 @@
     console.log("ReactDOM version:", ReactDOM.version);
 
     try {
-      // Test component to verify rendering
-      const TestComponent = () => React.createElement('div', { className: 'text-center text-2xl text-pink-400' }, 'Test Render');
-
       const NavBar = () => React.createElement('nav', { className: 'bg-gray-800 p-4 fixed w-full top-0 z-20 shadow-lg' },
         React.createElement('div', { className: 'container mx-auto flex justify-between items-center' },
           React.createElement('div', { className: 'text-2xl font-bold gradient-text' }, 'Footcoin'),
@@ -52,10 +51,10 @@
         )
       );
 
-      const Hero = () => React.createElement('section', { id: 'home', className: 'min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative' },
+      const Hero = () => React.createElement('section', { id: 'home', className: 'min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto text-center px-4' },
           React.createElement('a', { href: '#home', className: 'cursor-pointer' },
-            React.createElement('img', { src: 'logo-placeholder.png', alt: 'Footcoin Logo', className: 'mx-auto mb-6 w-64 md:w-96 h-auto float', onError: () => console.error("Failed to load logo image") })
+            React.createElement('img', { src: 'https://footcoin.me/wp-content/uploads/2025/05/1746852152907-2048x681.png', alt: 'Footcoin Logo', className: 'mx-auto mb-6 w-64 md:w-96 h-auto float', onError: () => console.error("Failed to load logo image") })
           ),
           React.createElement('p', { className: 'text-xl md:text-2xl mb-4 max-w-2xl mx-auto' }, 'The kinkiest meme token on Solana. Join the foot fetish revolution and vibe with our community!'),
           React.createElement('div', { className: 'flex justify-center items-center mb-8' },
@@ -66,17 +65,20 @@
             React.createElement('a', { href: '#how-to-buy', className: 'bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Get $FOOTCOIN'),
             React.createElement('a', { href: 'https://t.me/footcoin', target: '_blank', className: 'border border-pink-500 hover:bg-pink-500 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Join Telegram')
           )
+        ),
+        React.createElement('a', { href: '#community', className: 'cursor-pointer' },
+          React.createElement('img', { src: 'https://footcoin.me/wp-content/uploads/2025/05/giphy.gif', alt: 'Dancing Girl Animation', className: 'absolute top-16 right-4 md:right-8 w-32 md:w-48 h-auto opacity-90', onError: () => console.error("Failed to load dancing girl image") })
         )
       );
 
-      const About = () => React.createElement('section', { id: 'about', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24' },
+      const About = () => React.createElement('section', { id: 'about', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto px-4' },
           React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'About $FOOTCOIN'),
           React.createElement('p', { className: 'text-xl max-w-3xl mx-auto text-center' }, '$FOOTCOIN is a meme token built on the Solana blockchain, inspired by the foot fetish community. It aims to bring together enthusiasts and crypto degens in a fun, engaging way while providing real utility through community-driven initiatives.')
         )
       );
 
-      const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'min-h-screen flex items-center justify-center bg-gray-900 py-24' },
+      const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'min-h-screen flex items-center justify-center bg-gray-900 py-24', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto px-4' },
           React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Tokenomics'),
           React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-8' },
@@ -96,7 +98,7 @@
         )
       );
 
-      const HowToBuy = () => React.createElement('section', { id: 'how-to-buy', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24' },
+      const HowToBuy = () => React.createElement('section', { id: 'how-to-buy', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto px-4' },
           React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'How to Buy $FOOTCOIN'),
           React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
@@ -112,7 +114,7 @@
         )
       );
 
-      const Exchanges = () => React.createElement('section', { id: 'exchanges', className: 'min-h-screen flex items-center justify-center bg-gray-900 py-24' },
+      const Exchanges = () => React.createElement('section', { id: 'exchanges', className: 'min-h-screen flex items-center justify-center bg-gray-900 py-24', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto px-4' },
           React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Exchange Listings'),
           React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
@@ -130,7 +132,7 @@
         )
       );
 
-      const Community = () => React.createElement('section', { id: 'community', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24' },
+      const Community = () => React.createElement('section', { id: 'community', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24', 'data-aos': 'fade-up' },
         React.createElement('div', { className: 'container mx-auto px-4 text-center' },
           React.createElement('h2', { className: 'text-4xl font-bold mb-12 gradient-text' }, 'Join the Footcoin Community'),
           React.createElement('p', { className: 'text-xl mb-8 max-w-2xl mx-auto' }, 'Connect with fellow foot enthusiasts and crypto degens. Share memes, get updates, and join the revolution!'),
@@ -163,8 +165,11 @@
       const root = ReactDOM.createRoot(document.getElementById('root'));
       root.render(React.createElement(App));
       console.log("React app rendered successfully");
+
+      // Initialize AOS for high-tech transitions
+      AOS.init({ duration: 1200, offset: 200, easing: 'ease-in-out' });
     } catch (error) {
-      console.error("Failed to render React app:", error);
+      console.error("Failed to render React app or initialize AOS:", error);
     }
   </script>
 </body>
