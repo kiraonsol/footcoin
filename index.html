@@ -3,19 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Footcoin ($FOOTCOIN) - The ultimate foot fetish meme token on Solana. Join the community, trade, and vibe with the kinkiest crypto around!">
-  <title>Footcoin - $FOOTCOIN Meme Token</title>
+  <title>Footcoin - Test Render</title>
   <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .float { animation: float 3s ease-in-out infinite; }
     .gradient-text {
       background: linear-gradient(90deg, #ff69b4, #00ff7f);
       -webkit-background-clip: text;
@@ -28,157 +20,34 @@
     <!-- Fallback content -->
     <div class="text-center p-8">
       <h1 class="text-4xl font-bold">Footcoin ($FOOTCOIN)</h1>
-      <p class="text-xl mt-4">Loading sections... Check console for errors.</p>
+      <p class="text-xl mt-4">Loading test... If this persists, check console or ensure a local server is used (e.g., python -m http.server 8000).</p>
     </div>
   </div>
   <script type="text/javascript">
     console.log("Starting script execution...");
-    console.log("Checking React and ReactDOM...");
 
-    // Test if scripts are loaded
+    // Check if scripts are loaded
     if (typeof React === 'undefined' || typeof ReactDOM === 'undefined') {
-      console.error("React or ReactDOM failed to load. Check network tab.");
+      console.error("React or ReactDOM failed to load. Check network tab or use a local server.");
+      document.write('<p style="color: red; text-align: center;">Error: React scripts failed to load. Use a local server (e.g., python -m http.server 8000).</p>');
     } else {
       console.log("React version:", React.version);
       console.log("ReactDOM version:", ReactDOM.version);
-    }
 
-    try {
-      console.log("Attempting to create root...");
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      console.log("Root created successfully.");
+      try {
+        console.log("Attempting to create root...");
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        console.log("Root created successfully.");
 
-      // Minimal test render
-      const TestRender = () => React.createElement('div', { className: 'text-center text-2xl text-pink-400' }, 'Test Render Successful');
+        const TestComponent = () => React.createElement('div', { className: 'text-center text-2xl text-pink-400 mt-20' }, 'React is Working!');
 
-      const NavBar = () => React.createElement('nav', { className: 'bg-gray-800 p-4 fixed w-full top-0 z-20 shadow-lg' },
-        React.createElement('div', { className: 'container mx-auto flex justify-between items-center' },
-          React.createElement('div', { className: 'text-2xl font-bold gradient-text' }, 'Footcoin'),
-          React.createElement('div', { className: 'space-x-4' },
-            React.createElement('a', { href: '#home', className: 'hover:text-pink-400 transition' }, 'Home'),
-            React.createElement('a', { href: '#about', className: 'hover:text-pink-400 transition' }, 'About'),
-            React.createElement('a', { href: '#tokenomics', className: 'hover:text-pink-400 transition' }, 'Tokenomics'),
-            React.createElement('a', { href: '#how-to-buy', className: 'hover:text-pink-400 transition' }, 'How to Buy'),
-            React.createElement('a', { href: '#exchanges', className: 'hover:text-pink-400 transition' }, 'Exchanges'),
-            React.createElement('a', { href: '#community', className: 'hover:text-pink-400 transition' }, 'Community')
-          )
-        )
-      );
-
-      const Hero = () => React.createElement('section', { id: 'home', className: 'min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-700 pt-16 relative', 'data-aos': 'fade-up' },
-        React.createElement('div', { className: 'container mx-auto text-center px-4' },
-          React.createElement('p', { className: 'text-xl md:text-2xl mb-4 max-w-2xl mx-auto' }, 'The kinkiest meme token on Solana. Join the foot fetish revolution and vibe with our community!'),
-          React.createElement('div', { className: 'flex justify-center items-center mb-8' },
-            React.createElement('input', { type: 'text', value: '0x1234567890abcdef', readOnly: true, className: 'bg-gray-700 p-2 rounded-l-lg text-white' }),
-            React.createElement('button', { onClick: () => { navigator.clipboard.writeText('0x1234567890abcdef'); alert('Copied!'); }, className: 'bg-pink-500 p-2 rounded-r-lg text-white' }, 'Copy')
-          ),
-          React.createElement('div', { className: 'space-x-4' },
-            React.createElement('a', { href: '#how-to-buy', className: 'bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Get $FOOTCOIN'),
-            React.createElement('a', { href: 'https://t.me/footcoin', target: '_blank', className: 'border border-pink-500 hover:bg-pink-500 text-white px-6 py-3 rounded-full font-semibold transition' }, 'Join Telegram')
-          )
-        )
-      );
-
-      const About = () => React.createElement('section', { id: 'about', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24', 'data-aos': 'fade-up' },
-        React.createElement('div', { className: 'container mx-auto px-4' },
-          React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'About $FOOTCOIN'),
-          React.createElement('p', { className: 'text-xl max-w-3xl mx-auto text-center' }, '$FOOTCOIN is a meme token built on the Solana blockchain, inspired by the foot fetish community. It aims to bring together enthusiasts and crypto degens in a fun, engaging way while providing real utility through community-driven initiatives.')
-        )
-      );
-
-      const Tokenomics = () => React.createElement('section', { id: 'tokenomics', className: 'min-h-screen flex items-center justify-center bg-gray-900 py-24', 'data-aos': 'fade-up' },
-        React.createElement('div', { className: 'container mx-auto px-4' },
-          React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Tokenomics'),
-          React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-8' },
-            React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg text-center' },
-              React.createElement('h3', { className: 'text-xl font-semibold mb-2' }, 'Total Supply'),
-              React.createElement('p', { className: 'text-2xl' }, '1,000,000,000 $FOOTCOIN')
-            ),
-            React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg text-center' },
-              React.createElement('h3', { className: 'text-xl font-semibold mb-2' }, 'Liquidity'),
-              React.createElement('p', { className: 'text-2xl' }, '100% Locked for 1 Year')
-            ),
-            React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg text-center' },
-              React.createElement('h3', { className: 'text-xl font-semibold mb-2' }, 'Distribution'),
-              React.createElement('p', { className: 'text-2xl' }, '50% Airdrop, 30% LP, 20% Team')
-            )
-          )
-        )
-      );
-
-      const HowToBuy = () => React.createElement('section', { id: 'how-to-buy', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24', 'data-aos': 'fade-up' },
-        React.createElement('div', { className: 'container mx-auto px-4' },
-          React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'How to Buy $FOOTCOIN'),
-          React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
-            React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg' },
-              React.createElement('h3', { className: 'text-xl font-semibold mb-4' }, 'Step 1: Set Up a Wallet'),
-              React.createElement('p', null, 'Download Phantom or Solflare wallet. Secure your seed phrase and add SOL to your wallet from an exchange like Binance or Coinbase.')
-            ),
-            React.createElement('div', { className: 'bg-gray-700 p-6 rounded-lg' },
-              React.createElement('h3', { className: 'text-xl font-semibold mb-4' }, 'Step 2: Buy $FOOTCOIN'),
-              React.createElement('p', null, 'Visit Raydium or Meteora, connect your wallet, and swap SOL for $FOOTCOIN. Check the contract address above.')
-            )
-          )
-        )
-      );
-
-      const Exchanges = () => React.createElement('section', { id: 'exchanges', className: 'min-h-screen flex items-center justify-center bg-gray-900 py-24', 'data-aos': 'fade-up' },
-        React.createElement('div', { className: 'container mx-auto px-4' },
-          React.createElement('h2', { className: 'text-4xl font-bold text-center mb-12 gradient-text' }, 'Exchange Listings'),
-          React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-8' },
-            React.createElement('div', { className: 'text-center' },
-              React.createElement('img', { src: 'https://via.placeholder.com/150', alt: 'Exchange 1', className: 'mx-auto mb-4' }),
-              React.createElement('p', null, 'Exchange 1'),
-              React.createElement('a', { href: '#', className: 'text-pink-400' }, 'Trade Now')
-            ),
-            React.createElement('div', { className: 'text-center' },
-              React.createElement('img', { src: 'https://via.placeholder.com/150', alt: 'Exchange 2', className: 'mx-auto mb-4' }),
-              React.createElement('p', null, 'Exchange 2'),
-              React.createElement('a', { href: '#', className: 'text-pink-400' }, 'Trade Now')
-            )
-          )
-        )
-      );
-
-      const Community = () => React.createElement('section', { id: 'community', className: 'min-h-screen flex items-center justify-center bg-gray-800 py-24', 'data-aos': 'fade-up' },
-        React.createElement('div', { className: 'container mx-auto px-4 text-center' },
-          React.createElement('h2', { className: 'text-4xl font-bold mb-12 gradient-text' }, 'Join the Footcoin Community'),
-          React.createElement('p', { className: 'text-xl mb-8 max-w-2xl mx-auto' }, 'Connect with fellow foot enthusiasts and crypto degens. Share memes, get updates, and join the revolution!'),
-          React.createElement('div', { className: 'flex justify-center space-x-6' },
-            React.createElement('a', { href: 'https://t.me/footcoin', target: '_blank', className: 'text-4xl hover:text-pink-400 transition' }, '📱'),
-            React.createElement('a', { href: 'https://twitter.com/footcoin', target: '_blank', className: 'text-4xl hover:text-pink-400 transition' }, '🐦'),
-            React.createElement('a', { href: 'https://discord.gg/footcoin', target: '_blank', className: 'text-4xl hover:text-pink-400 transition' }, '🎮')
-          )
-        )
-      );
-
-      const Footer = () => React.createElement('footer', { className: 'bg-gray-900 py-8 border-t border-gray-700' },
-        React.createElement('div', { className: 'container mx-auto px-4 text-center' },
-          React.createElement('p', null, '© 2025 Footcoin. All rights reserved.'),
-          React.createElement('p', { className: 'mt-2 text-sm' }, 'Not financial advice. DYOR before investing.')
-        )
-      );
-
-      const App = () => React.createElement('div', null,
-        React.createElement(NavBar),
-        React.createElement(Hero),
-        React.createElement(About),
-        React.createElement(Tokenomics),
-        React.createElement(HowToBuy),
-        React.createElement(Exchanges),
-        React.createElement(Community),
-        React.createElement(Footer)
-      );
-
-      console.log("Attempting to render app...");
-      root.render(React.createElement(App));
-      console.log("React app rendered successfully");
-
-      // Initialize AOS for transitions
-      AOS.init({ duration: 1200, offset: 200, easing: 'ease-in-out' });
-      console.log("AOS initialized successfully");
-    } catch (error) {
-      console.error("Error during execution:", error);
+        console.log("Attempting to render...");
+        root.render(React.createElement(TestComponent));
+        console.log("Render completed successfully.");
+      } catch (error) {
+        console.error("Rendering failed:", error);
+        document.write('<p style="color: red; text-align: center;">Rendering error: ' + error.message + '</p>');
+      }
     }
   </script>
 </body>
