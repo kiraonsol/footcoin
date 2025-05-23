@@ -1,54 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footcoin - Test Render</title>
-  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .gradient-text {
-      background: linear-gradient(90deg, #ff69b4, #00ff7f);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footcoin Whitepaper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-  <div id="root">
-    <!-- Fallback content -->
-    <div class="text-center p-8">
-      <h1 class="text-4xl font-bold">Footcoin ($FOOTCOIN)</h1>
-      <p class="text-xl mt-4">Loading test... If this persists, check console or ensure a local server is used (e.g., python -m http.server 8000).</p>
+<body class="bg-white flex flex-col items-center justify-between min-h-screen">
+    <div class="flex-grow flex items-center justify-center p-4 sm:p-8">
+        <img src="https://i.ibb.co/C3MGqCF/Footcoin-Whitepaper.png" alt="Footcoin Whitepaper" class="w-full max-w-md h-auto">
     </div>
-  </div>
-  <script type="text/javascript">
-    console.log("Starting script execution...");
-
-    // Check if scripts are loaded
-    if (typeof React === 'undefined' || typeof ReactDOM === 'undefined') {
-      console.error("React or ReactDOM failed to load. Check network tab or use a local server.");
-      document.write('<p style="color: red; text-align: center;">Error: React scripts failed to load. Use a local server (e.g., python -m http.server 8000).</p>');
-    } else {
-      console.log("React version:", React.version);
-      console.log("ReactDOM version:", ReactDOM.version);
-
-      try {
-        console.log("Attempting to create root...");
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        console.log("Root created successfully.");
-
-        const TestComponent = () => React.createElement('div', { className: 'text-center text-2xl text-pink-400 mt-20' }, 'React is Working!');
-
-        console.log("Attempting to render...");
-        root.render(React.createElement(TestComponent));
-        console.log("Render completed successfully.");
-      } catch (error) {
-        console.error("Rendering failed:", error);
-        document.write('<p style="color: red; text-align: center;">Rendering error: ' + error.message + '</p>');
-      }
-    }
-  </script>
+    <footer class="bg-[#161b22] w-full text-center py-3">
+        <p class="font-bold text-white text-lg sm:text-xl tracking-tight">EUdQbKfHucJe99GVt3HQMUZCQtWtvXFyjvrqDWctpump</p>
+    </footer>
 </body>
 </html>
